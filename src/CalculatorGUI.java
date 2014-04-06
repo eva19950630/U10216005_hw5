@@ -254,7 +254,7 @@ class Calculation extends JFrame {
 /**Password Class*/
 class Password extends JFrame implements ActionListener {
 	
-	private JTextField jtfPassword = new JTextField("", 8);
+	private JTextField jtfPassword = new JTextField("", 12);
 	private JButton jbtEnter = new JButton("Enter to your calculator");
 	private JFrame jf = new JFrame();
 	
@@ -287,7 +287,7 @@ public class CalculatorGUI {
 
 	public static void main(String[] args) {
 		Password PWframe = new Password();
-		PWframe.setSize(400,80);
+		PWframe.setSize(400,100);
 		PWframe.setVisible(true);
 		PWframe.setTitle("Password");
 		PWframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
