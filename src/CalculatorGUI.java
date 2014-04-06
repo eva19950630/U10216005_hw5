@@ -1,10 +1,11 @@
 
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
 import javax.swing.event.*;
 
-
+/**Calculation Class*/
 class Calculation extends JFrame {
 	
 	private JTextField jtf;
@@ -250,12 +251,47 @@ class Calculation extends JFrame {
 	
 }
 
+/**Password Class*/
+class Password extends JFrame implements ActionListener {
+	
+	private JTextField jtfPassword = new JTextField("", 8);
+	private JButton jbtEnter = new JButton("Enter to your calculator");
+	private JFrame jf = new JFrame();
+	
+	private String password = "0000";
+	
+	public Password(){
+		JPanel p1 = new JPanel();
+		p1.add(new JLabel("Enter passwords"));
+		p1.add(jtfPassword);
+		p1.add(jbtEnter);
+		
+		add(p1,BorderLayout.CENTER);
+		jbtEnter.addActionListener(this);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(jtfPassword.getText().equals(password)){
+			Calculation cal = new Calculation();
+			cal.setDefaultCloseOperation(cal.EXIT_ON_CLOSE);
+		} else {
+			jtfPassword.setText("Wrong Passwords");
+		}	
+	}
+	
+}
+
 
 public class CalculatorGUI {
 
 	public static void main(String[] args) {
-		Calculation cal = new Calculation();
-		cal.setDefaultCloseOperation(cal.EXIT_ON_CLOSE);
+		Password PWframe = new Password();
+		PWframe.setSize(400,80);
+		PWframe.setVisible(true);
+		PWframe.setTitle("Password");
+		PWframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		PWframe.setLocationRelativeTo(null);	
 	}
 
 }
