@@ -14,8 +14,8 @@ class Calculation extends JFrame {
 	private String now_num = "";
 	private boolean reset_num = false;
 	private int optSymbol = 0;
-	private double sol = 0;
-	private double tmp2 = 0;
+	private double sol = 0.0;
+	private double tmp2 = 0.0;
 	
 	/**Constructor*/
 	public Calculation() {
@@ -42,7 +42,7 @@ class Calculation extends JFrame {
 		jbt = new JButton[20];
 		
 		// Left Button(Number . +/-)
-		GridLayout glL = new GridLayout(3, 2);
+		GridLayout glL = new GridLayout(4, 3);
 		glL.setHgap(10);
 		glL.setVgap(10);
 		numPanel = new JPanel(glL);
@@ -100,7 +100,7 @@ class Calculation extends JFrame {
 			jbt[i].setForeground(Color.RED);
 			jbt[i].setFont(new Font("Verdana", Font.PLAIN, 12));
 			jbt[i].addActionListener(acl);
-			jbt[i].setMargin(new Insets(0, 10, 0, 10));
+			jbt[i].setMargin(new Insets(0, 5, 0, 5));
 		}
 		
 		// Composing these twenty buttons
